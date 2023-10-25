@@ -1,10 +1,11 @@
 from domain.exceptions import ServiceCallException, StockNotFound
+from domain.gateways.alpha_vantage_gateway import AlphaVantageGatewayBase
 from domain.stock import Stock
 from infrastructure.config import ALPHA_URL, ALPHA_API_KEY
 from infrastructure.gateways.base import BaseGateway
 
 
-class AlphaVantageGateway(BaseGateway):
+class AlphaVantageGateway(AlphaVantageGatewayBase, BaseGateway):
     _BASE_URL = f'{ALPHA_URL}query'
     _API_KEY = ALPHA_API_KEY
 

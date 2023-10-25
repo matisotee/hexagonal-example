@@ -3,12 +3,13 @@ from typing import List
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
+from domain.repositories.stock_repository import StockRepositoryBase
 from domain.stock import Stock
 from infrastructure.orm.schemas import StockOrmSchema
 from infrastructure.orm.session import get_db_session
 
 
-class StockRepository:
+class StockRepository(StockRepositoryBase):
 
     def __init__(self, session: Session = Depends(get_db_session)):
         self.session = session

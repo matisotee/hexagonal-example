@@ -1,0 +1,59 @@
+# Archivos y directorios generados por Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.db
+
+# Directorios generados por herramientas de desarrollo de Python
+/.venv/
+venv/
+*.egg-info/
+dist/
+.build/
+.python-version
+
+# Archivos específicos de macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+__MACOSX/
+Thumbs.db
+ehthumbs.db
+
+# Directorios y archivos específicos para entornos de desarrollo o IDE
+.idea/
+.vscode/
+*.code-workspace
+*.iml
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos generados por linters, pruebas y cobertura
+.coverage
+.coverage.*
+.pytest_cache/
+.tox/
+nosetests.xml
+coverage.xml
+
+# Archivos generados por herramientas de administración de dependencias
+pip-log.txt
+pip-delete-this-directory.txt
+requirements.txt
+
+# Archivos de registro y registro de errores
+*.log
+
+# Archivos y directorios locales
+__pycache__/
+*.swp
+*.bak
+*.tmp
+*.bak.*
+*.swp.*
+*~

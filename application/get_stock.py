@@ -1,16 +1,18 @@
+from importlib import import_module
+
 from fastapi import Depends
 
+from domain.gateways.alpha_vantage_gateway import AlphaVantageGatewayBase
+from domain.repositories.stock_repository import StockRepositoryBase
 from domain.stock import Stock
-from infrastructure.gateways.alpha_vantage_gateway import AlphaVantageGateway
-from infrastructure.repositories.stock import StockRepository
 
 
 class GetStockService:
 
     def __init__(
             self,
-            alpha_vantage_gateway: AlphaVantageGateway = Depends(AlphaVantageGateway),
-            stock_repository: StockRepository = Depends(StockRepository)
+            alpha_vantage_gateway: AlphaVantageGatewayBase = Depends(getattr(import_module('infrastructure.gateways.alpha_vantage_gateway'), 'AlphaVantageGateway')),
+            stock_repository: StockRepositoryBase = Depends(getattr(import_module('infrastructure.repositories.stock'), 'StockRepository'))
     ):
         self.gateway = alpha_vantage_gateway
         self.repository = stock_repository
