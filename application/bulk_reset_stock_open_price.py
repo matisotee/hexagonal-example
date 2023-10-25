@@ -1,17 +1,18 @@
+from importlib import import_module
 from typing import List
 
 from fastapi import Depends
 
+from domain.repositories.stock_repository import StockRepositoryBase
 from domain.stock import Stock
 from domain.stock_open_price_resetter import StockOpenPriceResetter
-from infrastructure.repositories.stock import StockRepository
 
 
 class BulkResetStockOpenPriceService:
 
     def __init__(
             self,
-            stock_repository: StockRepository = Depends(StockRepository)
+            stock_repository: StockRepositoryBase = Depends(getattr(import_module('infrastructure.repositories.stock'), 'StockRepository'))
     ):
         self.repository = stock_repository
 
