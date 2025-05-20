@@ -1,7 +1,7 @@
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import JSONResponse
 
-from domain.exceptions import BaseApplicationException
+from src.domain.exceptions import BaseApplicationException
 
 
 class ExceptionMiddleware(BaseHTTPMiddleware):

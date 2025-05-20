@@ -1,6 +1,6 @@
 from typing import List
 
-from domain.stock import Stock
+from src.domain.models.stock import Stock
 
 
 class StockOpenPriceResetter:

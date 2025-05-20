@@ -11,7 +11,7 @@ class Stock(BaseModel):
     variation: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
     @classmethod
     def create_from_alpha_vantage_data(cls, json_response: Dict):
