@@ -44,7 +44,6 @@ coverage.xml
 # Archivos generados por herramientas de administración de dependencias
 pip-log.txt
 pip-delete-this-directory.txt
-requirements.txt
 
 # Archivos de registro y registro de errores
 *.log
